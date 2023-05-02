@@ -9,6 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from formulas import *
 
 
 class Ui_MainWindow(object):
@@ -32,9 +33,9 @@ class Ui_MainWindow(object):
         self.add_output_label = QtWidgets.QLabel(self.add_tab)
         self.add_output_label.setGeometry(QtCore.QRect(10, 130, 341, 20))
         self.add_output_label.setObjectName("add_output_label")
-        self.add_input_vals = QtWidgets.QLineEdit(self.add_tab)
-        self.add_input_vals.setGeometry(QtCore.QRect(90, 60, 113, 20))
-        self.add_input_vals.setObjectName("add_input_vals")
+        self.add_input = QtWidgets.QLineEdit(self.add_tab)             #add function input
+        self.add_input.setGeometry(QtCore.QRect(90, 60, 113, 20))
+        self.add_input.setObjectName("add_input")
         self.label_3 = QtWidgets.QLabel(self.add_tab)
         self.label_3.setGeometry(QtCore.QRect(10, 60, 71, 16))
         self.label_3.setObjectName("label_3")
@@ -42,6 +43,9 @@ class Ui_MainWindow(object):
         self.add_button.setGeometry(QtCore.QRect(90, 100, 75, 23))
         self.add_button.setObjectName("add_button")
         self.tabWidget.addTab(self.add_tab, "")
+
+
+
         self.sub_tab = QtWidgets.QWidget()
         self.sub_tab.setObjectName("sub_tab")
         self.label_4 = QtWidgets.QLabel(self.sub_tab)
@@ -50,9 +54,9 @@ class Ui_MainWindow(object):
         self.label_5 = QtWidgets.QLabel(self.sub_tab)
         self.label_5.setGeometry(QtCore.QRect(20, 50, 81, 16))
         self.label_5.setObjectName("label_5")
-        self.sub_input1 = QtWidgets.QLineEdit(self.sub_tab)
+        self.sub_input1 = QtWidgets.QLineEdit(self.sub_tab)                  #sub function input 1
         self.sub_input1.setGeometry(QtCore.QRect(110, 50, 113, 20))
-        self.sub_input1.setObjectName("sub_input1")
+        self.sub_input1.setObjectName("sub_input1")                          #sub function input 2
         self.sub_input2 = QtWidgets.QLineEdit(self.sub_tab)
         self.sub_input2.setGeometry(QtCore.QRect(110, 100, 113, 20))
         self.sub_input2.setObjectName("sub_input2")
@@ -66,6 +70,8 @@ class Ui_MainWindow(object):
         self.sub_output_label.setGeometry(QtCore.QRect(10, 200, 351, 20))
         self.sub_output_label.setObjectName("sub_output_label")
         self.tabWidget.addTab(self.sub_tab, "")
+
+
         self.mult_tab = QtWidgets.QWidget()
         self.mult_tab.setObjectName("mult_tab")
         self.label_9 = QtWidgets.QLabel(self.mult_tab)
@@ -74,7 +80,7 @@ class Ui_MainWindow(object):
         self.instr_label_2 = QtWidgets.QLabel(self.mult_tab)
         self.instr_label_2.setGeometry(QtCore.QRect(10, 20, 221, 21))
         self.instr_label_2.setObjectName("instr_label_2")
-        self.mult_input = QtWidgets.QLineEdit(self.mult_tab)
+        self.mult_input = QtWidgets.QLineEdit(self.mult_tab)                   # mult function input
         self.mult_input.setGeometry(QtCore.QRect(80, 80, 241, 20))
         self.mult_input.setObjectName("mult_input")
         self.input_format_label = QtWidgets.QLabel(self.mult_tab)
@@ -87,6 +93,8 @@ class Ui_MainWindow(object):
         self.mult_button.setGeometry(QtCore.QRect(80, 110, 75, 23))
         self.mult_button.setObjectName("mult_button")
         self.tabWidget.addTab(self.mult_tab, "")
+
+
         self.div_tab = QtWidgets.QWidget()
         self.div_tab.setObjectName("div_tab")
         self.label_13 = QtWidgets.QLabel(self.div_tab)
@@ -98,12 +106,12 @@ class Ui_MainWindow(object):
         self.label_15 = QtWidgets.QLabel(self.div_tab)
         self.label_15.setGeometry(QtCore.QRect(10, 20, 221, 16))
         self.label_15.setObjectName("label_15")
-        self.div_input_val1 = QtWidgets.QLineEdit(self.div_tab)
-        self.div_input_val1.setGeometry(QtCore.QRect(90, 50, 113, 20))
-        self.div_input_val1.setObjectName("div_input_val1")
-        self.division_input_val2 = QtWidgets.QLineEdit(self.div_tab)
-        self.division_input_val2.setGeometry(QtCore.QRect(90, 80, 113, 20))
-        self.division_input_val2.setObjectName("division_input_val2")
+        self.div_input1 = QtWidgets.QLineEdit(self.div_tab)                # div function input 1
+        self.div_input1.setGeometry(QtCore.QRect(90, 50, 113, 20))
+        self.div_input1.setObjectName("div_input1")
+        self.div_input2 = QtWidgets.QLineEdit(self.div_tab)           # div function input 2
+        self.div_input2.setGeometry(QtCore.QRect(90, 80, 113, 20))
+        self.div_input2.setObjectName("div_input2")
         self.div_button = QtWidgets.QPushButton(self.div_tab)
         self.div_button.setGeometry(QtCore.QRect(90, 110, 75, 23))
         self.div_button.setObjectName("div_button")
@@ -111,6 +119,8 @@ class Ui_MainWindow(object):
         self.div_output_label.setGeometry(QtCore.QRect(10, 150, 311, 31))
         self.div_output_label.setObjectName("div_output_label")
         self.tabWidget.addTab(self.div_tab, "")
+        
+        
         self.percent_tab = QtWidgets.QWidget()
         self.percent_tab.setObjectName("percent_tab")
         self.label_16 = QtWidgets.QLabel(self.percent_tab)
@@ -119,20 +129,22 @@ class Ui_MainWindow(object):
         self.label_17 = QtWidgets.QLabel(self.percent_tab)
         self.label_17.setGeometry(QtCore.QRect(10, 70, 61, 16))
         self.label_17.setObjectName("label_17")
-        self.percent_button = QtWidgets.QPushButton(self.percent_tab)
-        self.percent_button.setGeometry(QtCore.QRect(90, 100, 75, 23))
-        self.percent_button.setObjectName("percent_button")
-        self.perc_input_val1 = QtWidgets.QLineEdit(self.percent_tab)
-        self.perc_input_val1.setGeometry(QtCore.QRect(80, 30, 231, 20))
-        self.perc_input_val1.setObjectName("perc_input_val1")
-        self.perc_input_val2 = QtWidgets.QLineEdit(self.percent_tab)
-        self.perc_input_val2.setGeometry(QtCore.QRect(80, 70, 231, 20))
-        self.perc_input_val2.setObjectName("perc_input_val2")
+        self.perc_button = QtWidgets.QPushButton(self.percent_tab)
+        self.perc_button.setGeometry(QtCore.QRect(90, 100, 75, 23))
+        self.perc_button.setObjectName("perc_button")
+        self.perc_input1 = QtWidgets.QLineEdit(self.percent_tab)
+        self.perc_input1.setGeometry(QtCore.QRect(80, 30, 231, 20))
+        self.perc_input1.setObjectName("perc_input1")
+        self.perc_input2 = QtWidgets.QLineEdit(self.percent_tab)
+        self.perc_input2.setGeometry(QtCore.QRect(80, 70, 231, 20))
+        self.perc_input2.setObjectName("perc_input2")
         self.perc_output_label = QtWidgets.QLabel(self.percent_tab)
         self.perc_output_label.setGeometry(QtCore.QRect(10, 150, 271, 21))
         self.perc_output_label.setObjectName("perc_output_label")
         self.tabWidget.addTab(self.percent_tab, "")
-        self.widget = QtWidgets.QWidget()
+
+        
+        self.widget = QtWidgets.QWidget()                           #History Table Widget
         self.widget.setObjectName("widget")
         self.tableWidget = QtWidgets.QTableWidget(self.widget)
         self.tableWidget.setGeometry(QtCore.QRect(10, 30, 401, 341))
@@ -184,7 +196,7 @@ class Ui_MainWindow(object):
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.div_tab), _translate("MainWindow", "Division"))
         self.label_16.setText(_translate("MainWindow", "Enter Value: "))
         self.label_17.setText(_translate("MainWindow", "Percentage:"))
-        self.percent_button.setText(_translate("MainWindow", "Submit"))
+        self.perc_button.setText(_translate("MainWindow", "Submit"))
         self.perc_output_label.setText(_translate("MainWindow", "Lable Output"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.percent_tab), _translate("MainWindow", "Percentage"))
         self.label_19.setText(_translate("MainWindow", "History"))
