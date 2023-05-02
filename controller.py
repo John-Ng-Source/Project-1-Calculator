@@ -21,6 +21,9 @@ class Controller(QMainWindow, Ui_MainWindow):
         try:
             values = self.add_input.text()
             self.add_output_label.setText(f'Sum of ({values}) = {add(values):.2f}')
+           
+                
+
         except ValueError:
             self.add_output_label.setText('Please Input Values In The Correct Format Above. Use Integers or Decimal Values')
 
