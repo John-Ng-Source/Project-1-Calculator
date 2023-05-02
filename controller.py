@@ -18,28 +18,46 @@ class Controller(QMainWindow, Ui_MainWindow):
 
 
     def add_submit(self):
-        values = self.add_input.text()
-        self.add_output_label.setText(f'Sum of ({values}) = {add(values):.2f}')
+        try:
+            values = self.add_input.text()
+            self.add_output_label.setText(f'Sum of ({values}) = {add(values):.2f}')
+        except ValueError:
+            self.add_output_label.setText('Please Input Values In The Correct Format Above. Use Integers or Decimal Values')
+
+
 
     def sub_submit(self):
-        num1 = self.sub_input1.text()
-        num2 = self.sub_input2.text()
-        self.sub_output_label.setText(f'{num1} - {num2} = {subtract(num1,num2):.2f}')
+        try:
+            num1 = self.sub_input1.text()
+            num2 = self.sub_input2.text()
+            self.sub_output_label.setText(f'{num1} - {num2} = {subtract(num1,num2):.2f}')
+        except ValueError:
+             self.sub_output_label.setText('Please Input Integers or Decimal Values.')
 
     def mult_submit(self):
-        values = self.mult_input.text()
-        self.mult_output_label.setText(f'Product of ({values}) = {multiply(values):.2f}')
+        try:
+            values = self.mult_input.text()
+            self.mult_output_label.setText(f'Product of ({values}) = {multiply(values):.2f}')
+        except ValueError:
+            self.mult_output_label.setText('Please Input Values In The Correct Format Above. Use Integers or Decimal Values.')
 
     def div_submit(self):
-        num1 = self.div_input1.text()
-        num2 = self.div_input2.text()
-        self.div_output_label.setText(f'{num1} / {num2} = {divide(num1,num2):.2f}')
+        try:
+            num1 = self.div_input1.text()
+            num2 = self.div_input2.text()
+            self.div_output_label.setText(f'{num1} / {num2} = {divide(num1,num2):.2f}')
+        except ValueError:
+            self.div_output_label.setText('Please Input Integers or Decimal Values.')
+        except ZeroDivisionError:
+            self.div_output_label.setText('Error - Division By Zero')
 
     
     def perc_submit(self):
-        num1 = self.perc_input1.text()
-        num2 = self.perc_input2.text()
-        self.perc_output_label.setText(f'{num2}% of {num1}: {percentage(num1,num2):.2f}')
-
-    
+        try:
+            num1 = self.perc_input1.text()
+            num2 = self.perc_input2.text()
+            self.perc_output_label.setText(f'{num2}% of {num1}: {percentage(num1,num2):.2f}')
+        except ValueError:
+            self.perc_output_label.setText('Please Input Integers or Decimal Values.')
+            
         

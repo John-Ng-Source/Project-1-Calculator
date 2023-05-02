@@ -36,6 +36,11 @@ class Ui_MainWindow(object):
         self.add_input = QtWidgets.QLineEdit(self.add_tab)             #add function input
         self.add_input.setGeometry(QtCore.QRect(90, 60, 113, 20))
         self.add_input.setObjectName("add_input")
+
+        self.input_format_label_1 = QtWidgets.QLabel(self.add_tab)
+        self.input_format_label_1.setGeometry(QtCore.QRect(10, 35, 341, 20))
+        self.input_format_label_1.setObjectName("input_format_label")
+
         self.label_3 = QtWidgets.QLabel(self.add_tab)
         self.label_3.setGeometry(QtCore.QRect(10, 60, 71, 16))
         self.label_3.setObjectName("label_3")
@@ -83,11 +88,13 @@ class Ui_MainWindow(object):
         self.mult_input = QtWidgets.QLineEdit(self.mult_tab)                   # mult function input
         self.mult_input.setGeometry(QtCore.QRect(80, 80, 241, 20))
         self.mult_input.setObjectName("mult_input")
-        self.input_format_label = QtWidgets.QLabel(self.mult_tab)
-        self.input_format_label.setGeometry(QtCore.QRect(10, 50, 251, 16))
-        self.input_format_label.setObjectName("input_format_label")
+
+        self.input_format_label_2 = QtWidgets.QLabel(self.mult_tab)
+        self.input_format_label_2.setGeometry(QtCore.QRect(10, 50, 251, 16))
+        self.input_format_label_2.setObjectName("input_format_label")
+
         self.mult_output_label = QtWidgets.QLabel(self.mult_tab)
-        self.mult_output_label.setGeometry(QtCore.QRect(10, 140, 351, 31))
+        self.mult_output_label.setGeometry(QtCore.QRect(10, 140, 400, 31))
         self.mult_output_label.setObjectName("mult_output_label")
         self.mult_button = QtWidgets.QPushButton(self.mult_tab)
         self.mult_button.setGeometry(QtCore.QRect(80, 110, 75, 23))
@@ -172,6 +179,7 @@ class Ui_MainWindow(object):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Calculator"))
         self.instr_label.setText(_translate("MainWindow", "Please Enter Values Separted by a Comma."))
+        self.input_format_label_1.setText(_translate("MainWindow", "Input Format: 1, 2, 3, ...etc."))
         self.add_output_label.setText(_translate("MainWindow", "Lable Output"))
         self.label_3.setText(_translate("MainWindow", "Input Values:"))
         self.add_button.setText(_translate("MainWindow", "Calculate"))
@@ -184,7 +192,7 @@ class Ui_MainWindow(object):
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.sub_tab), _translate("MainWindow", "Subtraction"))
         self.label_9.setText(_translate("MainWindow", "Enter Values:"))
         self.instr_label_2.setText(_translate("MainWindow", "Please Enter Values Separted by a Comma."))
-        self.input_format_label.setText(_translate("MainWindow", "Input Format: 1, 2, 3, ...etc."))
+        self.input_format_label_2.setText(_translate("MainWindow", "Input Format: 1, 2, 3, ...etc."))
         self.mult_output_label.setText(_translate("MainWindow", "Lable Output:"))
         self.mult_button.setText(_translate("MainWindow", "Calculate"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.mult_tab), _translate("MainWindow", "Multiplication"))
