@@ -40,4 +40,6 @@ class Controller(QMainWindow, Ui_MainWindow):
         num1 = self.perc_input1.text()
         num2 = self.perc_input2.text()
         self.perc_output_label.setText(f'{num2}% of {num1}: {percentage(num1,num2):.2f}')
+
+    
         
