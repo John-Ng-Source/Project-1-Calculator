@@ -31,7 +31,7 @@ class Ui_MainWindow(object):
         self.instr_label.setGeometry(QtCore.QRect(10, 20, 221, 16))
         self.instr_label.setObjectName("instr_label")
         self.add_output_label = QtWidgets.QLabel(self.add_tab)
-        self.add_output_label.setGeometry(QtCore.QRect(10, 130, 341, 20))
+        self.add_output_label.setGeometry(QtCore.QRect(10, 130, 450, 20))
         self.add_output_label.setObjectName("add_output_label")
         self.add_input = QtWidgets.QLineEdit(self.add_tab)             #add function input
         self.add_input.setGeometry(QtCore.QRect(90, 60, 113, 20))
@@ -150,18 +150,17 @@ class Ui_MainWindow(object):
         self.perc_output_label.setObjectName("perc_output_label")
         self.tabWidget.addTab(self.percent_tab, "")
 
-        
-        self.widget = QtWidgets.QWidget()                           #History Table Widget
-        self.widget.setObjectName("widget")
-        self.tableWidget = QtWidgets.QTableWidget(self.widget)
-        self.tableWidget.setGeometry(QtCore.QRect(10, 30, 401, 341))
-        self.tableWidget.setObjectName("tableWidget")
-        self.tableWidget.setColumnCount(0)
-        self.tableWidget.setRowCount(0)
-        self.label_19 = QtWidgets.QLabel(self.widget)
+        self.history_tab = QtWidgets.QWidget()
+        self.history_tab.setObjectName("history_tab")
+        self.history_list = QtWidgets.QListWidget(self.history_tab)
+        self.history_list.setGeometry(QtCore.QRect(10, 30, 401, 341))
+        self.history_list.setObjectName("history_list")
+
+        self.label_19 = QtWidgets.QLabel(self.history_tab)
         self.label_19.setGeometry(QtCore.QRect(10, 10, 47, 14))
         self.label_19.setObjectName("label_19")
-        self.tabWidget.addTab(self.widget, "")
+        self.tabWidget.addTab(self.history_tab, "")
+
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 450, 22))
@@ -208,7 +207,8 @@ class Ui_MainWindow(object):
         self.perc_output_label.setText(_translate("MainWindow", "Lable Output"))
         self.tabWidget.setTabText(self.tabWidget.indexOf(self.percent_tab), _translate("MainWindow", "Percentage"))
         self.label_19.setText(_translate("MainWindow", "History"))
-        self.tabWidget.setTabText(self.tabWidget.indexOf(self.widget), _translate("MainWindow", "History"))
+        self.tabWidget.setTabText(self.tabWidget.indexOf(self.history_tab), _translate("MainWindow", "History"))
+
 
 
 if __name__ == "__main__":

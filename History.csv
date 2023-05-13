@@ -1,3 +1,6 @@
 Operation,Equation,Result
-Addition,50+68+48+398+09,573.0
-Addition,50+68+48+398,564.0
+Addition,1+2+3+4,10.0
+Subtraction,3 - 2,1.0
+Multiplication,1*2*3*4,24.0
+Division,12/6,2.0
+Percentage,12% of 150,0.12%

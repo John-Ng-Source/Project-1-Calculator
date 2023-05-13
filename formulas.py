@@ -1,6 +1,9 @@
 from gui import *
 import numpy
 import csv
+import os
+
+
 
 def add(values):
     number_list = values.strip().split(',')
@@ -11,6 +14,7 @@ def add(values):
         entry = ['Addition', f'{equation}', f'{sum(new_list)}']
         content = csv.writer(csvfile, delimiter = ',')
         content.writerow(entry)
+    
     
     return sum(new_list)
 
@@ -48,7 +52,6 @@ def percentage(num1, num2):
         entry = ['Percentage', num2 + '%' +' of ' + num1, f'{percent}%']
         content = csv.writer(csvfile, delimiter = ',')
         content.writerow(entry)
-
     return float(num1) * percent 
 
 
